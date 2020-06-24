@@ -7,31 +7,31 @@ namespace Kitchen.Api.Data
     {
         public static CupcakeDatastore Current {get;} = new CupcakeDatastore();
 
-        public List<Cupcake> Cupcakes {get; set; }
+        public List<CupcakeDto> Cupcakes {get; set; }
         public CupcakeDatastore(){
-            Cupcakes = new List<Cupcake>(){
-                new Cupcake(){
+            Cupcakes = new List<CupcakeDto>(){
+                new CupcakeDto(){
                     Id = 1,
                     Name = "Chocolate",
                     Description = "Chocolatey and delicious",
                     Price = 4.95m,
                     Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgsnbhtyxwu83esiCshNY7-YCypRKUHikL58EuaX-DUq-A698-FA"
                 },
-                new Cupcake(){
+                new CupcakeDto(){
                     Id = 2,
                     Name = "Vanilla",
                     Description = "Plain, boring vanilla cupcake",
                     Price = 4.95m,
                     Image = "https://www.lifeloveandsugar.com/wp-content/uploads/2017/01/Moist-Vanilla-Cupcakes2.jpg"
                 },
-                new Cupcake(){
+                new CupcakeDto(){
                     Id = 3,
                     Name = "Red Velvet",
                     Description = "Is it chocolate? I don't know! It looks red and tastes delicious",
                     Price = 5.5m,
                     Image = "https://therecipecritic.com/wp-content/uploads/2017/01/RedVelvetCupcakes2-667x1000.jpg"
                 },
-                new Cupcake(){
+                new CupcakeDto(){
                     Id = 4,
                     Name = "Pumpkin Spice",
                     Description = "Seasonal classic that tastes like everyone's favorite squash",

@@ -1,6 +1,6 @@
 namespace Kitchen.Api.Models
 {
-    public class Cupcake
+    public class CupcakeDto
     {
         public int Id {get; set;}
         
