@@ -62,5 +62,5 @@ namespace Kitchen.Api.Data
             Image = "https://media2.s-nbcnews.com/j/newscms/2018_16/1332898/unicorn-cupcakes-today-041918-tease_607876a763a32491c1bf4bb7c8eab53e.today-inline-large.jpg"
         };
     }
-    }
+    
 }

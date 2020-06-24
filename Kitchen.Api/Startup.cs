@@ -20,11 +20,12 @@ namespace Kitchen.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()   ;
+            services.AddTransient<ICupcakeRepository, CupcakeRepository>();
 
             services.AddDbContext<InventoryContext>(options => options.UseInMemoryDatabase(nameof(Cupcake))
             );
 
-            services.AddScoped<ICupcakeRepository, CupcakeRepository>();
+            
 
         }
 

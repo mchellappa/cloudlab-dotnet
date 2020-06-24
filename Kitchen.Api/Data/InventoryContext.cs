@@ -7,9 +7,9 @@ namespace Kitchen.Api.Data
     {
         public DbSet<Cupcake> Cupcakes {get; set;}
 
-        public InventoryContext(DbContextOptions<InventoryContext> options) :base(options){
+        public InventoryContext(DbContextOptions options) : base(options)
+        {
             Database.EnsureCreated();
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
