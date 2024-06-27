@@ -317,6 +317,25 @@ namespace Kitchen.Api.Controllers
 }
 ```
 
+## Add Swagger to the project
+
+```csharp
+dotnet add package Swashbuckle.AspNetCore
+```
+
+#Update the Startup.cs to add the SwaggerGen and Use the SwaggerGen
+```csharp
+builder.Services.AddSwaggerGen();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+```
+
+For more information https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-8.0&tabs=visual-studio-code
+
 ## When we were using PCF
 
 ### Manifest
