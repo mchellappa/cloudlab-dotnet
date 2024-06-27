@@ -184,10 +184,13 @@ public class InventoryContext : DbContext
     }
 ```
 
-Let's register `InventoryContext` in our `Startup.cs` file. Add the following code to the `ConfigureServices` method:
 
+## Dependency Injection 
+Learn more at https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection
+
+Let's register `InventoryContext` in our `Program.cs` file. Add the following code to the `ConfigureServices` method:
 ```csharp
-services.AddDbContext<InventoryContext>(options =>
+builder.Services.AddDbContext<InventoryContext>(options =>
 {
     options.UseInMemoryDatabase(nameof(Cupcake));
 });
