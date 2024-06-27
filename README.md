@@ -9,7 +9,7 @@ Run the following command to create an XUnit project
 
 ```powershell
 dotnet new xunit -o Kitchen.Test
-dotnet new web -o Kitchen.Api
+dotnet new mvc -o Kitchen.Api
 
 cd Kitchen.Test
 dotnet add reference ../Kitchen.Api
@@ -60,32 +60,6 @@ Open Startup.cs and add MVC
 
 Setup the VS Code to run dotnet Core projects. Launch.json and tasks.json will have to be created.
 
-```charp
-
-public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc()   ;
-    
-
-        }
-        
-  public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler();
-            }
-            app.UseStatusCodePages();
-
-            app.UseMvc();
-        }
- 
-
-```
 
 Create InventoryController.cs (Routing)
 
@@ -122,6 +96,7 @@ Add `using Kitchen.Api.Models` to the top of `IdentityService.cs` to resolve the
 
 Delete the `app.Run` statement `Kitchen.Api/Startup.cs`. Now, register MVC as a service and using it during app configuration as shown below.
 
+## Old dotnet6 way
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -154,7 +129,7 @@ namespace Kitchen.Api
 }
 ```
 
-The app is now using MVC; however, it does not have any routes mapped. Add a folder named `Controllers` in `Kitchen.Api` and create a file named `InventoryController.cs`.
+The app is now using MVC; however, it does not have any routes mapped. In the folder named `Controllers` in `Kitchen.Api` and create a file named `InventoryController.cs`.
 
 ```csharp
 using System.Collections.Generic;
