@@ -13,6 +13,8 @@ dotnet new mvc -o Kitchen.Api
 
 cd Kitchen.Test
 dotnet add reference ../Kitchen.Api
+
+dotnet dev-certs https --trust
 ```
 
 Create a `nuget.config` file in both the `Kitchen.Test` and `Kitchen.Api` directories and add the following configuration:
@@ -286,9 +288,36 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
+## Update InventoryController with this to get the Inventory
+```csharp
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Kitchen.Api.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
+namespace Kitchen.Api.Controllers
+{
+    [Route("api/[controller]")]
+    public class InventoryController : Controller
+    {
+        private readonly InventoryContext _context;
 
-## PCF
+        public InventoryController(InventoryContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<List<Cupcake>> GetAllAsync()
+        {
+            return await _context.Cupcakes.ToListAsync();
+        }
+    }
+}
+```
+
+## When we were using PCF
 
 ### Manifest
 
